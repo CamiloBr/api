@@ -1,0 +1,110 @@
+INSTRUCCIONES:
+
+SPRINT # 2
+
+/* Vendedores */
+
+Observacion general: El campo password sale "null", ya que no se consulta por ser un campo que preserva la privacidad del vendedor
+
+RECURSO # 1: Consultar listado total de vendedores
+URL: http://localhost:8080/nja/api/v1/vendedores/
+VERBO: GET
+CONSUME: 
+PRODUCE: JSON de un vendedor({"id":1,"usuario":"Jorge","password":null,"correo":"jorge@gmail.com","telefono":"3152254784","rol":2,"activo":"S"})
+
+
+RECURSO # 2: Crear vendedor
+URL: http://localhost:8080/nja/api/v1/vendedores/
+VERBO: POST
+CONSUME: JSON de un recurso ({"usuario": "Juan", "password": "4321", "correo": "juan@gmail.com", "telefono": "3152254785"})
+PRODUCE: JSON de un vendedor({"id":3,"usuario":"Juan","password":null,"correo":"juan@gmail.com","telefono":"3152254785","rol":2,"activo":"S"})
+Observaciones: el objeto de respuesta es el mismo de entrada pero con un ID, Rol y Estado asignado desde la BD
+
+
+RECURSO # 3: Actualizar vendedor
+URL: http://localhost:8080/nja/api/v1/vendedores/
+VERBO: PUT
+CONSUME: JSON de un recurso ({"id": 3, "usuario": "Raul", "password": "54321", "correo": "raul@gmail.com", "telefono": "3202254785"})
+PRODUCE: JSON de un vendedor({"texto": "OK"})
+Observaciones: el objeto de respuesta indica que se realizo la tarea con exito, sin posibilidad de cambio para Rol y Estado asignado al vendedor a la hora de su creación.
+
+RECURSO # 3: Eliminar vendedor
+URL: http://localhost:8080/nja/api/v1/vendedores/eliminar
+VERBO: DELETE
+CONSUME: 
+PRODUCE: JSON de un vendedor({"texto": "OK"})
+Observaciones: el objeto de respuesta indica que se realizo la tarea con exito, ademas se elimina el vendedor indicando en la URL el ID del vendedor. Ejemplo: http://localhost:8080/nja/api/v1/vendedores/eliminar/3
+
+
+
+
+/* Usuario Normal */
+
+
+Observacion general: El campo password sale "null", ya que no se consulta por ser un campo que preserva la privacidad del usuario normal
+
+RECURSO # 1: Consultar listado total de usuarios normales
+URL: http://localhost:8080/nja/api/v1/usuariosN/
+VERBO: GET
+CONSUME: 
+PRODUCE: JSON de un usuario normal({"id":1,"usuario":"Ricardo","password":null,"correo":"ricardo@gmail.com","telefono":"3212254784","rol":3,"activo":"S"})
+
+
+RECURSO # 2: Crear usuario normal
+URL: http://localhost:8080/nja/api/v1/usuariosN/
+VERBO: POST
+CONSUME: JSON de un recurso ({"usuario":"Saul","password":12345,"correo":"saul@gmail.com","telefono":"3002254784"})
+PRODUCE: JSON de un usuario normal({"id":3,"usuario":"Saul","password":null,"correo":"saul@gmail.com","telefono":"3002254785","rol":3,"activo":"S"})
+Observaciones: el objeto de respuesta es el mismo de entrada pero con un ID, Rol y Estado asignado desde la BD
+
+
+RECURSO # 3: Actualizar usuario normal
+URL: http://localhost:8080/nja/api/v1/usuariosN/
+VERBO: PUT
+CONSUME: JSON de un recurso ({"id": 3, "usuario": "Ramon", "password": "54321", "correo": "ramon@gmail.com", "telefono": "3202254785"})
+PRODUCE: JSON de un usuario normal({"texto": "OK"})
+Observaciones: el objeto de respuesta indica que se realizo la tarea con exito, sin posibilidad de cambio para Rol y Estado asignado al usuario normal a la hora de su creación.
+
+RECURSO # 3: Eliminar usuario normal
+URL: http://localhost:8080/nja/api/v1/usuariosN/eliminar
+VERBO: DELETE
+CONSUME: 
+PRODUCE: JSON de un usuario normal({"texto": "OK"})
+Observaciones: el objeto de respuesta indica que se realizo la tarea con exito, ademas se elimina el usuario normal indicando en la URL el ID del usuario normal. Ejemplo: http://localhost:8080/nja/api/v1/usuariosN/eliminar/3
+
+
+
+
+/* Administrador */
+
+
+Observacion general: El campo password sale "null", ya que no se consulta por ser un campo que preserva la privacidad del administrador
+
+RECURSO # 1: Consultar listado total de administradores
+URL: http://localhost:8080/nja/api/v1/administradores/
+VERBO: GET
+CONSUME: 
+PRODUCE: JSON de un administrador({"id": 6, "usuario": "Matthew", "password": null, "correo": "Matthew@gmail.com", "telefono": "3132254784", "rol": 1, "activo": "S"})
+
+
+RECURSO # 2: Crear administrador
+URL: http://localhost:8080/nja/api/v1/administradores/
+VERBO: POST
+CONSUME: JSON de un recurso ({"usuario": "Diana", "password": "4321"," correo": "diana@gmail.com", "telefono": "3202254785"})
+PRODUCE: JSON de un administrador({"id":8, "usuario": "Diana", "password": "4321"," correo": "diana@gmail.com", "telefono": "3202254785", "rol":1, "activo":"S"})
+Observaciones: el objeto de respuesta es el mismo de entrada pero con un ID, Rol y Estado asignado desde la BD
+
+
+RECURSO # 3: Actualizar administrador
+URL: http://localhost:8080/nja/api/v1/administradores/
+VERBO: PUT
+CONSUME: JSON de un recurso ({"id": 8, "usuario": "Diana", "password": "4321", "correo": "diana@gmail.com", "telefono": "3202254785"})
+PRODUCE: JSON de un administrador({"texto": "OK"})
+Observaciones: el objeto de respuesta indica que se realizo la tarea con exito, sin posibilidad de cambio para Rol y Estado asignado al administrador a la hora de su creación.
+
+RECURSO # 3: Eliminar administrador
+URL: http://localhost:8080/nja/api/v1/administradores/eliminar
+VERBO: DELETE
+CONSUME: 
+PRODUCE: JSON de un administrador({"texto": "OK"})
+Observaciones: el objeto de respuesta indica que se realizo la tarea con exito, ademas se elimina el administrador indicando en la URL el ID del administrador. Ejemplo: http://localhost:8080/nja/api/v1/administradores/eliminar/8
